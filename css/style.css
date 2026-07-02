@@ -1,0 +1,368 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #00ffff, #ff006f);
+  font-family: Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+.navbar {
+  margin: 10px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.login,
+.admin-panel {
+  width: calc(100% - 24px);
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.login h2,
+.admin-panel h2 {
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 18px;
+  color: #222;
+}
+
+.login input,
+.admin-panel input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255,255,255,0.9);
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.login button,
+#logout-btn,
+#add {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00ffff, #ff006f);
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.login button:active,
+#logout-btn:active,
+#add:active {
+  transform: scale(0.97);
+}
+
+/* ========================= */
+/* PRODUCTOS ADMIN LISTA */
+/* ========================= */
+
+#list {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+#list div {
+  background: rgba(255,255,255,0.85);
+  padding: 12px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+  transition: transform 0.15s ease;
+}
+
+#list div:active {
+  transform: scale(0.98);
+}
+
+#list img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+#list h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #222;
+}
+
+#list p {
+  margin: 0;
+  font-size: 14px;
+  color: #444;
+}
+
+#list b {
+  font-size: 15px;
+  color: #000;
+}
+
+#list button {
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 0, 0, 0.75);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#list button:active {
+  transform: scale(0.97);
+}
+
+/* ========================= */
+/* PRODUCTOS CLIENTES (TIENDA) */
+/* ========================= */
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  padding: 14px;
+}
+
+#products div {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease;
+}
+
+#products div:active {
+  transform: scale(0.97);
+}
+
+#products img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+#products h3 {
+  margin: 8px 10px 0 10px;
+  font-size: 15px;
+  color: #222;
+}
+
+#products p {
+  margin: 6px 10px 0 10px;
+  font-size: 13px;
+  color: #444;
+}
+
+#products b {
+  margin: 10px;
+  font-size: 15px;
+  color: #000;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+  .login,
+  .admin-panel {
+    margin: 12px auto;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .navbar {
+    margin: 6px;
+    padding: 10px;
+  }
+
+  .login h2,
+  .admin-panel h2 {
+    font-size: 17px;
+  }
+
+  .login input,
+  .admin-panel input {
+    font-size: 14px;
+    padding: 11px;
+  }
+
+  .login button,
+  #logout-btn,
+  #add {
+    font-size: 14px;
+    padding: 11px;
+  }
+}
+
+/* ========================= */
+/* MODAL RESERVA */
+/* ========================= */
+
+#modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+}
+
+#modal > div,
+#modal h3,
+#modal input,
+#modal button {
+  box-sizing: border-box;
+}
+
+#modal > div,
+#modal {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#modal {
+  padding: 14px;
+}
+
+#modal-content,
+#modal > div {
+  width: 100%;
+  max-width: 380px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+#modal h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+  color: #222;
+}
+
+#modal input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(0,0,0,0.05);
+  outline: none;
+  font-size: 14px;
+}
+
+#modal button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#send {
+  background: linear-gradient(135deg, #00ffff, #ff006f);
+  color: white;
+}
+
+#close {
+  background: rgba(0,0,0,0.1);
+  color: #222;
+}
+
+#send:active,
+#close:active {
+  transform: scale(0.97);
+}
+.reserve {
+  width: calc(100% - 20px);
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00ffff, #ff006f);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.reserve:active {
+  transform: scale(0.97);
+}
+
+.reserve:hover {
+  filter: brightness(1.1);
+}
+
+#orders {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#orders div {
+  background: rgba(255,255,255,0.85);
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#orders p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+#orders button {
+  margin-top: 6px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00ffff, #ff006f);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#orders button:active {
+  transform: scale(0.97);
+}
