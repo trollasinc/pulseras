@@ -233,7 +233,7 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
-  background: rgba(0,0,0,0.6);
+  background: rgb(255, 255, 255);
   z-index: 9999;
 }
 
@@ -266,6 +266,10 @@ body {
   box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
+.input_reserva {
+  margin-bottom: 12px;
+}
+
 #modal h3 {
   margin: 0;
   text-align: center;
@@ -293,6 +297,7 @@ body {
 }
 
 #send {
+  margin-bottom: 12px;
   background: linear-gradient(135deg, #00ffff, #ff006f);
   color: white;
 }
@@ -337,7 +342,7 @@ body {
 }
 
 #orders div {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
   padding: 12px;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
@@ -365,4 +370,14 @@ body {
 
 #orders button:active {
   transform: scale(0.97);
+}
+
+.done {
+  color: limegreen;
+  font-weight: bold;
+}
+
+.pending {
+  color: red;
+  font-weight: bold;
 }
